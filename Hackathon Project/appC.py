@@ -84,7 +84,7 @@ input_data_scaled = scaler.fit_transform(input_data)  # Assuming the scaler is b
 if st.button('Predict'):
     prediction = model.predict(input_data_scaled)
     threshold = 0.5  # Adjust threshold if needed
-    result = 'Churn' if prediction[0] > threshold else 'No Churn'
+    result = 'Churn' if prediction[0] > threshold else 'Churn'
     st.success(f'The prediction is: {result}')
     
     # Suggestions
