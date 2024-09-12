@@ -86,3 +86,24 @@ if st.button('Predict'):
     threshold = 0.5  # Adjust threshold if needed
     result = 'Churn' if prediction[0] > threshold else 'No Churn'
     st.success(f'The prediction is: {result}')
+    
+    # Suggestions
+    suggestions = []
+    
+    if contract == 'Month-to-month':
+        suggestions.append("Consider switching to a 2-year contract for better stability.")
+    if payment_method == 'Electronic check':
+        suggestions.append("Switch to Credit Card for more convenient payment processing.")
+    if tech_support == 'No':
+        suggestions.append("Add Tech Support for enhanced assistance.")
+    if online_security == 'No':
+        suggestions.append("Add Online Security for better protection.")
+    if online_backup == 'No':
+        suggestions.append("Add Online Backup to safeguard your data.")
+    if device_protection == 'No':
+        suggestions.append("Add Device Protection to cover your devices.")
+    
+    if suggestions:
+        st.subheader('Suggestions:')
+        for suggestion in suggestions:
+            st.write(f"- {suggestion}")

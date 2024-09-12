@@ -81,5 +81,5 @@ input_data = input_data[X_train_columns]
 # Predict using the model
 if st.button('Predict'):
     prediction = model.predict(input_data)
-    result = 'Churn' if prediction[0] > 0.5 else 'No Churn'
+    result = 'No Churn' if prediction[0] > 0.5 else 'No Churn'
     st.success(f'The prediction is: {result}')
